@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>서울디지텍고메뉴</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      color: inherit;
+      list-style: none;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+    body > ul {
+      display: flex;
+    }
+    span{
+      display: inline-block;
+      width: 200px;
+      height: 50px;
+      background: #e9f5db ;
+      text-align: center;
+      line-height: 50px;
+    }
+    li:hover , span:hover{
+      background: #cfe1b9;
+    }
+    ul>li>ul>li{
+      height: 0;
+      overflow: hidden;
+      transition: 0.5s;
+    }
+    ul>li:hover >ul>li{
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+    <ul>
+      <li  th:each="rootmenu: ${parentMenu}">
+        <span th:text="${rootmenu.getName()}" ></span>
+        <ul  th:each="sibal: ${rootmenu.getMenus()}">
+          <li>
+            <span th:text="${sibal.getName()}"></span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+</body>
+</html>

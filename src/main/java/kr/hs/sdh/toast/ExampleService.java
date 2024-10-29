@@ -26,10 +26,10 @@ public class ExampleService {
 
     public Menu getMenu() {
         List<Menu> subMenus = new ArrayList<>();
-        Menu subMenu1 = new Menu("서브메뉴1");
-        Menu subMenu2 = new Menu("서브메뉴2");
-        Menu subMenu3 = new Menu("서브메뉴3");
-        Menu subMenu4 = new Menu("서브메뉴4");
+        Menu subMenu1 = new Menu("서브메뉴1", true);
+        Menu subMenu2 = new Menu("서브메뉴2", false);
+        Menu subMenu3 = new Menu("서브메뉴3", false);
+        Menu subMenu4 = new Menu("서브메뉴4", false);
 
         subMenus.add(subMenu1);
         subMenus.add(subMenu2);

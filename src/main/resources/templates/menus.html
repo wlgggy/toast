@@ -5,12 +5,31 @@
   <meta charset="UTF-8">
   <title>Title</title>
 </head>
+<style>
+      .active{
+        color: red;
+      }
+
+      .deactive{
+        color: gainsboro;
+      }
+</style>
+<script th:inline="javascript">
+    const rootMenu = /*[[${parentMenu}]]*/{};
+
+    console.log(rootMenu);
+</script>
 <body>
     <ul>
       <li>
-        <span th:text="${menus.getName()}" ></span>
+        <span th:text="${parentMenu.getName()}" ></span>
         <ul>
-          <li th:each="menus: ${menus.getMenus()}" th:text="${menus.getName()}"></li>
+          <li th:each="subMenu: ${parentMenu.getMenus()}">
+            <label>
+              <span th:class="${subMenu.isActive ? 'active' : 'deactive'}" th:text="${subMenu.getName()}"></span>
+              <input type="checkbox" th:checked="${subMenu.getIsActive()}">
+            </label>
+          </li>
         </ul>
       </li>
     </ul>

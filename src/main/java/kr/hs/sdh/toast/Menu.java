@@ -8,11 +8,16 @@ public class Menu {
 
     private List<Menu> menus;
 
+    private boolean isActive;
+
     public Menu(String name) {
         this.name = name;
-
     }
-    /** 이름, 서브메뉴를 받는 생성자 추가하기*/
+
+    public Menu(String name, Boolean isActive) {
+        this.name = name;
+        this.isActive = isActive;
+    }
 
     public Menu(String name, List<Menu> menus) {
         this.name = name;
@@ -25,6 +30,10 @@ public class Menu {
 
     public List<Menu> getMenus() {
         return this.menus;
+    }
+
+    public Boolean getIsActive() {
+        return this.isActive;
     }
 
 }
