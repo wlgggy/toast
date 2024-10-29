@@ -30,4 +30,5 @@ public class ExampleController {
     }
 
 }
-new
+ExampleService exampleService = new ExampleService();
+ExampleController exampleController = new ExampleController();
