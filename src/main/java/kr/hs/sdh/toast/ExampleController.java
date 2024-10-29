@@ -29,4 +29,10 @@ public class ExampleController {
         return modelAndView;
     }
 
+    @GetMapping("/menus")
+    public ModelAndView menus() {
+        ModelAndView modelAndView = new ModelAndView("menus");
+
+        return modelAndView;
+    }
 }
