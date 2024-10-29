@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 public class ExampleController {
 
-    private final ExampleService exampleService; // 필드
+    private final ExampleService exampleService;
 
     public ExampleController(ExampleService exampleService) {
         this.exampleService = exampleService;
@@ -22,13 +22,11 @@ public class ExampleController {
     @GetMapping("/list")
     public ModelAndView myList() {
         ModelAndView modelAndView = new ModelAndView("list");
-        String[] fruits = new String[]{"사과","바나나","멜론","수박"}; // 데이터 베이스에서 가져올거임
-        
+        String[] fruits = exampleService.getFruits();
+
         modelAndView.addObject("fruits", fruits);
 
         return modelAndView;
     }
 
 }
-ExampleService exampleService = new ExampleService();
-ExampleController exampleController = new ExampleController();
