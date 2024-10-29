@@ -23,4 +23,8 @@ public class Menu {
         return this.name;
     }
 
+    public List<Menu> getMenus() {
+        return this.menus;
+    }
+
 }

@@ -33,6 +33,10 @@ public class ExampleController {
     public ModelAndView menus() {
         ModelAndView modelAndView = new ModelAndView("menus");
 
+        Menu rootMenu = exampleService.getMenu();
+
+        modelAndView.addObject("menus", exampleService.getMenu());
+
         return modelAndView;
     }
 }
